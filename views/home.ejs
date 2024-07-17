@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" />
+    <title>index</title>
+  </head>
+  <body class="bg-green-600">
+    <nav class="flex bg-red-600">
+      <h1 class="text-white font-bold text-center text-3xl bg-slate-700">
+        Ledger Book
+      </h1>
+      <ul class="flex justify-center items-center gap-4">
+        <li><a href="#">Home</a></li>
+        <li><a href="/create">Create ledger</a></li>
+      </ul>
+    </nav>
+    <main class="flex flex-col items-center justify-center min-h-screen">
+      <ul>
+        <% files.forEach((file)=>{ %>
+        <li><%= file %></li>
+        <a href="/edit/<%= file %>">Edit</a>
+        <a href="/delete/<%= file %>">Delete</a>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>
